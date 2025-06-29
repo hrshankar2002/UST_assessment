@@ -1,0 +1,5 @@
+path: /home/hari/Desktop/UST_assessment/problem_1/data
+train: images/train
+val: images/val
+nc: 3
+names: ['A', 'B', 'C']

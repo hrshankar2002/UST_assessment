@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Road Scene Simulation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        #controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            padding: 15px;
+            border-radius: 8px;
+            min-width: 200px;
+        }
+        
+        #timeline {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            z-index: 100;
+            background: rgba(0,0,0,0.8);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        button {
+            background: #333;
+            color: white;
+            border: 1px solid #555;
+            padding: 8px 12px;
+            margin: 2px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #555;
+        }
+        
+        button:active {
+            background: #777;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            margin: 10px 0;
+        }
+        
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 200;
+            text-align: center;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .info-panel {
+            background: rgba(0,0,0,0.6);
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="loading">
+            <h2>Loading 3D Scene...</h2>
+            <div id="loadingProgress">0%</div>
+        </div>
+        
+        <div id="controls" class="hidden">
+            <h3>Scene Controls</h3>
+            
+            <div class="info-panel">
+                <div>Frame: <span id="frameInfo">0/0</span></div>
+                <div>Time: <span id="timeInfo">0.0s</span></div>
+                <div>Vehicles: <span id="vehicleCount">0</span></div>
+            </div>
+            
+            <div>
+                <button id="playBtn">Play</button>
+                <button id="pauseBtn">Pause</button>
+                <button id="restartBtn">Restart</button>
+            </div>
+            
+            <div>
+                <label>Speed: <span id="speedValue">1.0x</span></label>
+                <input type="range" id="speedSlider" min="0.1" max="3" step="0.1" value="1">
+            </div>
+            
+            <div>
+                <h4>Camera</h4>
+                <button id="overviewBtn">Overview</button>
+                <button id="followBtn">Follow</button>
+                <button id="sideBtn">Side View</button>
+            </div>
+            
+            <div>
+                <label>
+                    <input type="checkbox" id="showLanes" checked> Show Lanes
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" id="showRoad" checked> Show Road
+                </label>
+            </div>
+        </div>
+        
+        <div id="timeline" class="hidden">
+            <input type="range" id="timeSlider" min="0" max="100" value="0">
+            <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                <span>0:00</span>
+                <span id="totalTime">0:00</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="scene3d_fixed.js"></script>
+</body>
+</html>
