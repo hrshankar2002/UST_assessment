@@ -180,7 +180,7 @@ python build_tower.py <path to json config file> <path to output glb file>
 
 ### Depth Reconstruction (`real_tower_data/depth_recon.ipynb`)
 
-<img src="problem_v1/images/img.png" width="900" height="200" style="border: 5px solid black;">
+<img src="images/img.png" width="900" height="200" style="border: 5px solid black;">
 
 The is an additional experimental exploration of the same problem using monocular depth estimation and poisson surface reconstruction techniques to 
 generate a point cloud from the input 2D real world image, which is further subjected to mesh reconstruction to be exported in various 3D formats :
