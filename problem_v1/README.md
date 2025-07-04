@@ -151,7 +151,7 @@ Edit the data.yaml file with abs path to data folder before training
 yolo task=detect \
   mode=train \
   model=yolov8m.pt \
-  data=path to data.yaml \
+  data=abs path to data.yaml \
   epochs=50 \
   imgsz=640 \
   batch=16
@@ -162,7 +162,7 @@ yolo task=detect \
 yolo task=detect \
   mode=predict \
   model=runs/detect/train/weights/best.pt \
-  source=path to val data \
+  source=abs path to val data \
   save=True \
   save_txt=True
 ```
