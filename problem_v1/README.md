@@ -144,6 +144,10 @@ pip install torch transformers  # For depth estimation models
 
 # Training
 ```bash
+Note!
+Edit the data.yaml file with abs path to data folder before training
+```
+```bash
 yolo task=detect \
   mode=train \
   model=yolov8m.pt \
@@ -188,4 +192,5 @@ generate a point cloud from the input 2D real world image, which is further subj
 - Point cloud generation from depth maps
 - 3D mesh reconstruction using Poisson surface reconstruction
 - Export to various 3D formats (.obj, .xyz)
+
 

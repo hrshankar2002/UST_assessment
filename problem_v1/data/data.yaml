@@ -1,5 +1,6 @@
-path: /home/hari/Desktop/UST_assessment/problem_1/data
+# data.yaml
+path: /home/hari/Desktop/UST_assessment/problem_v1/data   #abs path  
 train: images/train
 val: images/val
 nc: 3
-names: ['A', 'B', 'C']
+names: [A, B, C]

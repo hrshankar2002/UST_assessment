@@ -166,13 +166,15 @@ problem_v2/
 
 1. **Install Dependencies**
    ```bash
-   cd YOLOPv2/
+   cd problem_v2/YOLOPv2/
    pip install -r requirements.txt
+   cd data/weights
+   wget https://github.com/CAIC-AD/YOLOPv2/releases/download/V0.0.1/yolopv2.pt
    ```
 
 2. **Run YOLOPv2 Inference**
    ```bash
-    cd YOLOPv2
+    cd ../..
     python demo.py \
       --weights data/weights/yolopv2.pt \
       --source ../data/input.MP4 \
@@ -202,4 +204,5 @@ problem_v2/
    - Navigate to `http://localhost:8000`
    - The simulation loads automatically
    - Use on-screen controls for interaction
+
 
